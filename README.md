@@ -1,0 +1,1 @@
+Site by [LWD](http://lightwebdesign.com.ua/)
