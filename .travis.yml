@@ -4,4 +4,4 @@ rvm:
 before_script:
   - bundle exec rake db:create db:migrate
 notifications:
-  slack: lalightwebdesign:D7n6lxbifJcLSBRCEqTEx0HW
+  slack: lalightwebdesign:b6n7pTMNFqzsM4tqttzZwg9c
