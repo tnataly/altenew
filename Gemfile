@@ -52,3 +52,8 @@ group :development do
   gem 'binding_of_caller'
   gem 'meta_request'
 end
+
+group :production do
+  gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
+  gem 'unicorn'
+end
