@@ -1,0 +1,55 @@
+<main>
+
+  <hr class="hr_bot">
+  <h2 class="text-center">Customer Register</h2>
+  <hr class="text-center heading__hr">
+
+  <div class="container container__m-b">
+    <div class="row text-center">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <div class="wow bounceInLeft block_login center-block" data-wow-delay="0.7s">
+          <div class="form-group">
+            <%= f.input :name, autofocus: true, input_html: { class: 'form-control text-center form_login' }, placeholder: "Your name", label: false %>
+          </div>
+          <div class="form-group">
+            <%= f.input :email, autofocus: true, type: "email", input_html: { class: 'form-control text-center form_login' }, placeholder: "Your e-mail", label: false %>
+          </div>
+          <div class="form-group">
+            <%= f.input :password, autocomplete: "off", type: "email", input_html: { class: 'form-control text-center form_login' }, placeholder: "Password, 8 characters minimum ", label: false %>
+          </div>
+          <div class="form-group">
+            <%= f.input :password_confirmation, autocomplete: "off", type: "email", input_html: { class: 'form-control text-center form_login' }, placeholder: "Password once more", label: false %>
+          </div>
+          <div class="row form-group">
+            <div class="col-xs-6">
+              <%= f.submit "Register", class: "btn btn_form pull-left", type: "submit"%>
+            </div>
+            <%- if controller_name != 'sessions' %>
+              <div class="col-xs-6">
+              <%= link_to "Login", new_session_path(resource_name), type: "button", class: "btn btn_form pull-right" %>
+              </div>
+            <% end -%>
+          </div>
+          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+            <div class="form-group">
+              <%= link_to "Forgot your password?", new_password_path(resource_name), class: "btn btn__login_link" %>
+            </div>
+          <% end -%>
+          <div class="row">
+            <div class="col-xs-12">
+              <%- resource_class.omniauth_providers.each do |provider| %>
+                <%= link_to omniauth_authorize_path(resource_name, provider) do %>
+                  <button type="button" class="btn button__facebook">
+                    <i class="fa fa-facebook fa-facebook__login" aria-hidden="true"></i>
+                    Sign in with Facebook
+                  </button>
+                <% end -%>
+              <% end -%>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</main>
+

@@ -1,0 +1,54 @@
+<main>
+
+  <hr class="hr_bot">
+  <h2 class="text-center">Customer Login</h2>
+  <hr class="text-center heading__hr">
+
+  <div class="container container__m-b">
+    <div class="row text-center">
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="wow bounceInLeft block_login center-block" data-wow-delay="0.7s">
+          <div class="form-group">
+            <%= f.input :email, autofocus: true, placeholder: "Your e-mail", input_html: { class: 'form-control text-center form_login' }, label: false %>
+          </div>
+          <div class="form-group">
+            <%= f.input :password, autocomplete: "off", input_html: { class: 'form-control text-center form_login' }, placeholder: "Password", label: false %>
+          </div>
+          <% if devise_mapping.rememberable? -%>
+            <div class="checkbox custom-checkbox">
+              <%= f.check_box :remember_me %>
+              <%= f.label "Keep me signed in" %>
+            </div>
+          <% end -%>
+          <div class="row form-group">
+            <div class="col-xs-6">
+              <%= f.button :submit, 'Login', class: "btn btn_form pull-left"%>
+            </div>
+            <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+              <div class="col-xs-6">
+              <%= link_to "Register", new_registration_path(resource_name), type: "button", class: "btn btn_form pull-right" %>
+              </div>
+            <% end -%>
+          </div>
+          <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+            <div class="form-group">
+              <%= link_to "Forgot your password?", new_password_path(resource_name), class: "btn btn__login_link" %>
+            </div>
+          <% end -%>
+          <div class="row">
+            <div class="col-xs-12">
+              <%- resource_class.omniauth_providers.each do |provider| %>
+                <%= link_to omniauth_authorize_path(resource_name, provider) do %>
+                  <button type="button" class="btn button__facebook">
+                    <i class="fa fa-facebook fa-facebook__login" aria-hidden="true"></i>
+                    Sign in with Facebook
+                  </button>
+                <% end -%>
+              <% end -%>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</main>
