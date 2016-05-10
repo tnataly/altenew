@@ -824,3 +824,25 @@ li.active > .tabs_rsvp{
 #strong{
   font-weight: bold;
 }
+/*bootstrap filestyle*/
+.bootstrap-filestyle.input-group{
+  width: 380px;
+}
+.btn-primary.file-url {
+  text-transform: uppercase;
+  color: #fff;
+  width: 100%;
+  font-weight: bold;
+  border-color: #c5c5c5;
+  opacity: 0.9;
+  border-radius: 5px;
+  z-index: 998;
+  background-color: #c5c5c5;
+  background-image: none;
+}
+.btn-primary.file-url:hover{
+  color: #fff;
+  border-color: #daa520;
+  background-color: #daa520;
+  background-image: none;
+}

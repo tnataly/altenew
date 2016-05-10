@@ -1,0 +1,168 @@
+<main>
+
+  <div class="bg">
+    <div class="container">
+      <div class="row">
+        <%= simple_form_for [:admin, @template], :html => {:class => 'inline-form'} do |f|%>
+          <div class="col-xs-12 col-sm-12 col-md-3">
+            <div class="form-group">
+              <div class="col-xs-2">
+                <%= f.label "Tilte" %>
+              </div>
+              <div class="col-xs-10">
+                <%= f.input :title, placeholder: "Enter title", input_html: { class: 'form-control' }, label: false %>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-3">
+            <div class="form-group">
+              <div class="col-xs-6">
+                <%= f.label "Template size" %>
+              </div>
+              <div class="col-xs-6">
+                <%= f.input :size, collection: ["1x1", "2x2", "3x3", "4x4", "5x5"], input_html: { class: 'form-control' }, label: false %>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-6">
+            <div class="form-group">
+              <div class="col-xs-3">
+                <%= f.label "Cover image" %>
+              </div>
+              <div class="col-xs-5">
+                <%= f.file_field :cover_image, :multipart => true, type: "file", "data-buttonName" => "btn-primary file-url", "data-buttonText" => "UPLOAD IMAGE", "data-icon" => "false", "data-placeholder" => "Your image", class: "form-control filestyle" %>
+              </div>
+
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="container text-center">
+    <div class="row">
+
+      <div class="col-xs-12 col-sm-6 col-md-6">
+        <h3>Front</h3>
+        <div class="block__edit_template">
+          <div class="img__edit">
+            <img src="" alt="">
+          </div>
+          <button id="btn__orange" class="btn main__btn main__btn-md main__btn_bg0">Add</button>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-6">
+        <h3>Back</h3>
+        <div class="block__edit_template">
+          <div class="img__edit">
+            <img src="" alt="">
+          </div>
+          <button id="btn__orange" class="btn main__btn main__btn-md main__btn_bg0">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container container__m-bb">
+    <div class="row row_left">
+      <h3>Front Samples</h3>
+      <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 front_sampl_edd">
+        <div class="col-xs-2">
+          <a href="#">
+            <div class="front_mul_edit">
+              <span class="fa-stack fa_times_op fa-2x">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-times fa-stack-1x fa-inverse"></i>
+              </span>
+            </div>
+          </a>
+        </div>
+        <div class="col-xs-2">
+          <a href="#">
+            <div class="front_mul_edit">
+              <span class="fa-stack fa_times_op fa-2x">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-times fa-stack-1x fa-inverse"></i>
+              </span>
+            </div>
+          </a>
+        </div>
+        <div class="col-xs-2">
+          <a href="#">
+            <div class="front_mul_edit">
+              <span class="fa-stack fa_times_op fa-2x">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-times fa-stack-1x fa-inverse"></i>
+              </span>
+            </div>
+          </a>
+        </div>
+        <div class="col-xs-2">
+          <a href="#">
+            <div class="front_mul_edit">
+              <span class="fa-stack fa_times_op fa-2x">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-times fa-stack-1x fa-inverse"></i>
+              </span>
+            </div>
+          </a>
+        </div>
+        <div class="col-xs-2">
+          <a href="#">
+            <div class="front_mul_edit">
+              <span class="fa-stack fa_times_op fa-2x">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-times fa-stack-1x fa-inverse"></i>
+              </span>
+            </div>
+          </a>
+        </div>
+        <div class="col-xs-2">
+          <a href="#">
+            <div class="front_mul_edit">
+              <span class="fa-stack fa_times_op fa-2x">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-times fa-stack-1x fa-inverse"></i>
+              </span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-xs-5 col-sm-4 col-md-3 col-lg-3">
+        <div class="col-xs-12 front_mul_par_pd">
+          <a href="#">
+            <div class="front_mul_edit_b">
+              <i class="fa fa-plus adm_kit_plus admin_ui_plus_pos" aria-hidden="true"></i>
+            </div>
+          </a>
+          <button id="btn__orange" class="btn main__btn">Add new sample</button>
+        </div>
+      </div>
+      <div class="pagin">
+        <ul class="pagination">
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+        </ul>
+      </div>
+      <div class="text-center margin_t_lg">
+        <%= link_to "Back", admin_templates_path, class: "main__btn btn main__btn_wa", id: "btn__orange", type: "button" %>
+        <%= f.button :submit, 'Save template', class: "main__btn btn main__btn_wa", id: "btn__orange" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+
+</main>
+
+<% content_for :javascript do %>
+  <script type='test/javascript'>
+    $(document).ready(function(){
+      $(":file").filestyle({buttonText: "Upload image"}, {icon: false});
+    });
+  </script>
+<% end %>

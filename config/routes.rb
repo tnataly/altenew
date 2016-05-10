@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
+
   devise_for :admins
   devise_for :users, :controllers => { registrations: 'registrations', omniauth_callbacks: 'omniauth_callbacks' }
+
+  namespace :admin do
+    resources :templates
+  end
+
+  root 'templates#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

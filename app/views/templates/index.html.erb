@@ -1,0 +1,62 @@
+<main>
+
+  <hr class="hr_bot">
+  <h2 class="text-center">Please select template to edit and print</h2>
+  <hr class="text-center heading__hr">
+
+  <div class="container">
+    <div class="row text-center">
+
+      <% @templates.each do |template|%>
+        <div class="col-xs-12 col-sm-12 col-md-6">
+          <div class="template__grid">
+              <div class="main__blok_for_img2 img-responsive">
+                <%= image_tag "#{template.cover_image}", style: "height: 287px; width: 388px;" %>
+                <a href="#" class="for__rotate">
+                  <div class="main__blok_for_img3 img-responsive">
+                    <span class="fa-stack fa-3x main__follow-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-share fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </div>
+                </a>
+              </div>
+            <hr class="pull-left img-responsive template__hr_t">
+            <br>
+            <h4 class="pull-left template__head_adm2"><%= template.title %></h4>
+            <button type="button" id="btn__orange" class="pull-left btn template__btn hidden-xs main__btn main__btn_inf">Personalize</button>
+            <button type="button" id="btn__orange" class="pull-left btn visible-xs xs_btn_xs template__btn main__btn main__btn_inf">Personalize</button>
+            <hr class="template__hr hidden-xs hidden-sm pull-left">
+          </div>
+        </div>
+      <% end %>
+    <div class="pagin">
+      <%= paginate @templates, :theme => 'twitter-bootstrap-3', :pagination_class => "pagination" %>
+    </div>
+
+    </div>
+  </div>
+  <div class="bgcf4">
+    <div class="container">
+      <div class="row row_width text-center center-block">
+        <h3>Helpful Tips & Suggestions</h3>
+        <hr class="heading__hr">
+        <div class="block-1">
+          <i class="fa pull-left icon_size fa-print" aria-hidden="true"></i>
+          <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit ( <a class="a_link_faq" href="#">Click here</a> to install ). Ullam qui quo deleniti incidunt deserunt ipsum unde amet, sint, consequuntur magnam repellat.</p>
+        </div>
+        <div class="block-1">
+          <i class="fa pull-left icon_size fa-list-alt" aria-hidden="true"></i>
+          <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam qui quo deleniti incidunt deserunt ipsum unde amet, sint, consequuntur magnam repellat.</p>
+        </div>
+        <div class="block-1">
+          <i class="fa pull-left icon_size fa-print" aria-hidden="true"></i>
+          <p class="text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam qui quo deleniti incidunt deserunt ipsum unde amet, sint, consequuntur magnam repellat.</p>
+        </div>
+        <h3 class="text-muted inset_text_top">Need more help printing or have questions?</h3>
+        <p class="to_link_faq">Visit our <a href="#" class="a_link_faq">FAQ Page</a> to answer common questions.</p>
+      </div>
+    </div>
+  </div>
+
+</main>
