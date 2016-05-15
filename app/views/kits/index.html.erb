@@ -1,0 +1,29 @@
+<main>
+
+  <hr class="hr_bot">
+  <h2 class="text-center">Please select kit to edit</h2>
+  <hr class="text-center heading__hr">
+
+  <div class="container container__m-b">
+    <div class="row text-center">
+
+      <% @kits.each do |kit|%>
+        <%= link_to kit_show_path(kit[:slug]), class: "for__rotate" do %>
+          <div class="wow fadeIn col-xs-12 col-sm-6 col-md-4" data-wow-delay="0.7s">
+            <div class="main__grid-thumbnail">
+              <div class="main__rotate img-responsive main__blok_for_img"><%= image_tag "#{kit.cover_image}", style: "height: 200px; width: 250px;" %></div>
+              <span class="fa-stack fa-3x main__follow">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-share fa-stack-1x fa-inverse"></i>
+              </span>
+              <%= link_to kit_show_path(kit[:slug]), class: "btn main__btn", id: "btn__orange" do %>
+                <%= kit.title %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+
+    </div>
+  </div>
+</main>

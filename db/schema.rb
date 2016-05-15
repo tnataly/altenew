@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160510132037) do
+ActiveRecord::Schema.define(version: 20160511071023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(version: 20160510132037) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
+  create_table "kits", force: true do |t|
+    t.string   "title"
+    t.string   "cover_image"
+    t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "kits", ["slug"], name: "index_kits_on_slug", unique: true, using: :btree
+
   create_table "templates", force: true do |t|
     t.string   "title"
     t.string   "cover_image"
@@ -41,6 +51,7 @@ ActiveRecord::Schema.define(version: 20160510132037) do
     t.datetime "updated_at"
     t.string   "size"
     t.string   "slug"
+    t.integer  "kit_id"
   end
 
   add_index "templates", ["slug"], name: "index_templates_on_slug", unique: true, using: :btree

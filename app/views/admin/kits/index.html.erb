@@ -1,0 +1,32 @@
+<main>
+
+  <hr class="hr_bot">
+  <h2 class="text-center">Please select kit to edit</h2>
+  <hr class="text-center heading__hr">
+  <div class="modal fade" id="kit-form"></div>
+  <div class="container container__m-b">
+    <div class="row text-center">
+
+      <a href="#" class="for__rotate">
+        <div class="wow fadeIn col-xs-12 col-sm-6 col-md-4" data-wow-delay="0.7s">
+          <div class="main__grid-thumbnail">
+            <div class="img__plus_ad img-responsive main__blok_for_img"></div>
+            <i class="fa add__kit fa-plus adm_kit_plus" aria-hidden="true"></i>
+            <%= link_to "Add new kit", new_admin_kit_path, remote: true, class: "main__a_btn btn-link" %>
+          </div>
+        </div>
+      </a>
+    <div id="kits">
+      <%= render @kits %>
+    </div>
+      <div class="pagin">
+        <%= paginate @kits, :theme => 'twitter-bootstrap-3', :pagination_class => "pagination" %>
+      </div>
+  </main>
+<% content_for :javascript do %>
+  <script type='test/javascript'>
+    $(document).ready(function(){
+      $(":file").filestyle({buttonText: "Upload image"}, {icon: false});
+    });
+  </script>
+<% end %>

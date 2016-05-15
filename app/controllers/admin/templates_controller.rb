@@ -1,7 +1,9 @@
 class Admin::TemplatesController < ApplicationController
+  before_action :set_kit, only: [:index, :edit, :new, :create, :update, :destroy]
+  before_action :set_template, only: [:edit, :update, :destroy]
 
   def index
-    @templates = Template.order(:title).page(params[:page])
+    @templates = @kit.templates.order(:title).page(params[:page])
   end
 
   def new
@@ -9,14 +11,13 @@ class Admin::TemplatesController < ApplicationController
   end
 
   def edit
-    @template = Template.friendly.find(params[:id])
   end
 
   def create
     @template = Template.new(template_params)
     respond_to do |format|
       if @template.save
-        format.html { redirect_to admin_templates_path }
+        format.html { redirect_to admin_kit_templates_path(@kit) }
         format.json { render :show, status: :created, location: @template }
       else
         format.html { render :new }
@@ -26,11 +27,10 @@ class Admin::TemplatesController < ApplicationController
   end
 
   def update
-    @template = Template.friendly.find(params[:id])
     @template.update(template_params)
     respond_to do |format|
       if @template.save
-        format.html { redirect_to admins_templates_path }
+        format.html { redirect_to admin_kit_templates_path(@kit) }
         format.json { render :show, status: :created, location: @template }
       else
         format.html { render :new }
@@ -40,11 +40,9 @@ class Admin::TemplatesController < ApplicationController
   end
 
   def destroy
-    @template = Template.friendly.find(params[:id])
-
     respond_to do |format|
       if @template.destroy
-        format.html { redirect_to admins_templates_path }
+        format.html { redirect_to admin_kit_templates_path(@kit) }
         format.json { render :show, status: :created, location: @template }
       else
         format.html { render :new }
@@ -59,8 +57,12 @@ class Admin::TemplatesController < ApplicationController
       @template = Template.friendly.find(params[:id])
     end
 
+    def set_kit
+      @kit = Kit.friendly.find(params[:kit_id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def template_params
-      params.require(:template).permit(:title, :size, :cover_image)
+      params.require(:template).permit(:title, :size, :cover_image, :kit_id)
     end
 end

@@ -1,7 +1,7 @@
-class Template < ActiveRecord::Base
-  belongs_to :kit
+class Kit < ActiveRecord::Base
+  has_many :templates
   mount_uploader :cover_image, ImageUploader
-  validates :title, :size, :cover_image, presence: true
+  validates :title, :cover_image, presence: true
 
   paginates_per 5
 
