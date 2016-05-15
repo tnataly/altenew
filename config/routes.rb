@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :kits do
-      resources :templates
+      resources :templates do
+        resources :samples
+      end
     end
   end
 

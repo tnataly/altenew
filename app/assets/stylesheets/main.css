@@ -787,7 +787,7 @@ li.active > .tabs_rsvp{
   opacity: 0;
 }
 .fa_times_op{
-  top: 32px;
+  top: -80px;
   left: 25px;
   color: #333;
   opacity:0;

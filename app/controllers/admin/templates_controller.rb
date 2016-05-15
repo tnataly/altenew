@@ -1,6 +1,7 @@
 class Admin::TemplatesController < ApplicationController
   before_action :set_kit, only: [:index, :edit, :new, :create, :update, :destroy]
   before_action :set_template, only: [:edit, :update, :destroy]
+  before_action :all_samples, only: [:edit, :new]
 
   def index
     @templates = @kit.templates.order(:title).page(params[:page])
@@ -11,6 +12,7 @@ class Admin::TemplatesController < ApplicationController
   end
 
   def edit
+    @sample = Sample.new
   end
 
   def create
@@ -64,5 +66,9 @@ class Admin::TemplatesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def template_params
       params.require(:template).permit(:title, :size, :cover_image, :kit_id)
+    end
+
+    def all_samples
+      @samples = @template.samples.order(updated_at: :desc).page(params[:page])
     end
 end
