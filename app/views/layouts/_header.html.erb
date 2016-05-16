@@ -1,0 +1,167 @@
+<header>
+  <div class="header__top text-center">
+    <%= link_to "Login", new_user_session_path, class: "header__a first" %>
+    <%= link_to "Register", new_user_registration_path, class: "header__a" %>
+  </div>
+  <div class="text-center header__block">
+    <%= image_tag "logo.png", class: "img-responsive center-block header__logo" %>
+    <h2 class="header__h2"><em>Editor</em></h2>
+  </div>
+
+  <!-- Навигация -->
+  <hr class="hr_top">
+
+  <div class="container nav__border">
+
+    <div class="navbar-header navbar-default">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
+        <span class="sr-only">Открыть навигацию</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav class="text-center collapse navbar-collapse" id="responsive-menu">
+      <ul class="nav hidden-xs">
+        <li class="col-md-2 col-lg-2 visible-lg visible-md"></li>
+        <li class="nav__li first"><a class="nav__a" href="#">Home</a></li>
+        <li class="nav__li devide__nav"></li>
+
+        <li class="dropdown nav__li">
+          <a class="dropdown-toggle nav__a" data-toggle="dropdown" href="#">About
+          <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+          <ul class="dropdown-menu drop__ul_nav">
+            <li class="nav__li_dropdown"><a href="#" class="nav__a_dropdown">About Altenew</a></li>
+            <li class="nav__li_dropdown"><a href="#" class="nav__a_dropdown">The Team</a></li>
+          </ul>
+        </li>
+        <li class="nav__li devide__nav"></li>
+
+        <li class="dropdown nav__li">
+          <a class="dropdown-toggle nav__a" data-toggle="dropdown" href="#">Shop
+          <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+          <ul class="dropdown-menu drop__ul_nav">
+            <li><a href="#" class="nav__a_dropdown">New</a></li>
+            <li><a href="#" class="nav__a_dropdown">Stamps</a></li>
+            <li><a href="#" class="nav__a_dropdown">Mini Stamps</a></li>
+            <li><a href="#" class="nav__a_dropdown">Dies</a></li>
+            <li><a href="#" class="nav__a_dropdown">Inks</a></li>
+            <li><a href="#" class="nav__a_dropdown">Tools</a></li>
+            <li><a href="#" class="nav__a_dropdown">Kits</a></li>
+            <li><a href="#" class="nav__a_dropdown">Paper</a></li>
+            <li><a href="#" class="nav__a_dropdown">Antique Trims</a></li>
+            <li><a href="#" class="nav__a_dropdown">Sale</a></li>
+            <li><a href="#" class="nav__a_dropdown">Gift Cards</a></li>
+            <li><a href="#" class="nav__a_dropdown">Shipping</a></li>
+          </ul>
+        </li>
+        <li class="nav__li devide__nav"></li>
+
+        <li class="dropdown nav__li">
+          <a class="dropdown-toggle nav__a" data-toggle="dropdown" href="#">Blog
+          <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+          <ul class="dropdown-menu drop__ul_nav">
+            <li><a href="#" class="nav__a_dropdown">Blog</a></li>
+            <li><a href="#" class="nav__a_dropdown">Social Stream</a></li>
+            <li><a href="#" class="nav__a_dropdown">Newsletter</a></li>
+          </ul>
+        </li>
+        <li class="nav__li devide__nav"></li>
+
+        <li class="dropdown nav__li">
+          <a class="dropdown-toggle nav__a" data-toggle="dropdown" href="#">Gallery
+          <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+          <ul class="dropdown-menu drop__ul_nav">
+            <li><a href="#" class="nav__a_dropdown">Altenew Gallery</a></li>
+            <li><a href="#" class="nav__a_dropdown">Member Gallery</a></li>
+          </ul>
+        </li>
+        <li class="nav__li devide__nav"></li>
+
+        <li class="dropdown nav__li">
+          <a class="dropdown-toggle nav__a" data-toggle="dropdown" href="#">Contact
+          <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+          <ul class="dropdown-menu drop__ul_nav">
+            <li><a href="#" class="nav__a_dropdown">General Inquiries</a></li>
+            <li><a href="#" class="nav__a_dropdown">Wholesale Inquires</a></li>
+            <li><a href="#" class="nav__a_dropdown">Marketing Inquires</a></li>
+          </ul>
+        </li>
+        <li class="nav__li devide__nav"></li>
+
+        <li class="nav__li"><a class="nav__a" href="#">Academy</a></li>
+      </ul>
+      <ul class="nav visible-xs">
+        <li class="nav__li-xs">
+          <a href="#" class="nav__a_dropdown nav__a_dropdown_xs">Home</a>
+        </li>
+
+        <li class="dropdown nav__li-xs">
+          <a class="dropdown-toggle nav__a_dropdown nav__a_dropdown_xs" data-toggle="dropdown" href="#" aria-expanded="false">About
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu__xs">
+            <li><a href="#">About Altenew</a></li>
+            <li><a href="#">The Team</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown nav__li-xs">
+          <a class="dropdown-toggle nav__a_dropdown nav__a_dropdown_xs" data-toggle="dropdown" href="#">Shop
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu__xs">
+            <li><a href="#">New</a></li>
+            <li><a href="#">Stamps</a></li>
+            <li><a href="#">Mini Stamps</a></li>
+            <li><a href="#">Dies</a></li>
+            <li><a href="#">Inks</a></li>
+            <li><a href="#">Tools</a></li>
+            <li><a href="#">Kits</a></li>
+            <li><a href="#">Paper</a></li>
+            <li><a href="#">Antique Trims</a></li>
+            <li><a href="#">Sale</a></li>
+            <li><a href="#">Gift Cards</a></li>
+            <li><a href="#">Shipping</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown nav__li-xs">
+          <a class="dropdown-toggle nav__a_dropdown nav__a_dropdown_xs" data-toggle="dropdown" href="#">Blog
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu__xs">
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Social Stream</a></li>
+            <li><a href="#">Newsletter</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown nav__li-xs">
+          <a class="dropdown-toggle nav__a_dropdown nav__a_dropdown_xs" data-toggle="dropdown" href="#">Gallery
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu__xs">
+            <li><a href="#">Altenew Gallery</a></li>
+            <li><a href="#">Member Gallery</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown nav__li-xs">
+          <a class="dropdown-toggle nav__a_dropdown nav__a_dropdown_xs" data-toggle="dropdown" href="#">Contact
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu__xs">
+            <li><a href="#">General Inquiries</a></li>
+            <li><a href="#">Wholesale Inquires</a></li>
+            <li><a href="#">Marketing Inquires</a></li>
+          </ul>
+        </li>
+
+        <li class="nav__li-xs">
+          <a class="nav__a_dropdown nav__a_dropdown_xs" href="#">Academy</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
