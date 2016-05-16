@@ -4,6 +4,7 @@ class Admin::TemplatesController < ApplicationController
   before_action :set_template, only: [:edit, :update, :destroy]
   before_action :all_samples, only: [:edit]
   before_action :set_front, only: [:edit]
+  before_action :set_back, only: [:edit]
   respond_to :html, :js
 
   def index
@@ -17,6 +18,7 @@ class Admin::TemplatesController < ApplicationController
   def edit
     @sample = Sample.new
     @front = Front.new
+    @back = Back.new
   end
 
   def create
@@ -78,5 +80,9 @@ class Admin::TemplatesController < ApplicationController
 
     def set_front
       @last_front = @template.fronts.last
+    end
+
+    def set_back
+      @last_back = @template.backs.last
     end
 end

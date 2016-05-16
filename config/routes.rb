@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :kits do
       resources :templates do
-        resources :samples, :fronts
+        resources :samples, :fronts, :backs
       end
     end
   end

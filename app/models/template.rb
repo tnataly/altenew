@@ -2,6 +2,7 @@ class Template < ActiveRecord::Base
   belongs_to :kit
   has_many :samples
   has_many :fronts
+  has_many :backs
   mount_uploader :cover_image, ImageUploader
   validates :title, :size, :cover_image, presence: true
 
