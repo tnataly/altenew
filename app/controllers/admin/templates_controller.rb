@@ -1,7 +1,10 @@
 class Admin::TemplatesController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:new, :create]
   before_action :set_kit, only: [:index, :edit, :new, :create, :update, :destroy]
   before_action :set_template, only: [:edit, :update, :destroy]
-  before_action :all_samples, only: [:edit, :new]
+  before_action :all_samples, only: [:edit]
+  before_action :set_front, only: [:edit]
+  respond_to :html, :js
 
   def index
     @templates = @kit.templates.order(:title).page(params[:page])
@@ -13,6 +16,7 @@ class Admin::TemplatesController < ApplicationController
 
   def edit
     @sample = Sample.new
+    @front = Front.new
   end
 
   def create
@@ -70,5 +74,9 @@ class Admin::TemplatesController < ApplicationController
 
     def all_samples
       @samples = @template.samples.order(updated_at: :desc).page(params[:page])
+    end
+
+    def set_front
+      @last_front = @template.fronts.last
     end
 end

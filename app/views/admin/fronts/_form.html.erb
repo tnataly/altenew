@@ -1,0 +1,21 @@
+<div class="modal-dialog modal-sm">
+  <div class="modal-content">
+    <div class="modal-body modal__bottom_inset">
+      <button class="close" type="button" data-dismiss="modal">&times;</button>
+      <h4 class="text-center">Add Front</h4>
+      <hr class="text-center heading__modal_hr">
+      <div class="modal1__block">
+        <%= simple_form_for [:admin, @kit, @template, @front], remote: true, :html => {:class => 'inline-form modal__form'} do |f|%>
+          <div class="form-group">
+           <%= f.input :template_id, :as => :hidden, label: false, :input_html => { :value => "#{@template.id}", :class => "hidden"} %>
+          </div>
+          <div class="form-group">
+            <%= f.label "Image" %>
+            <%= f.file_field :image, :multipart => true, type: "file", "data-buttonName" => "btn-primary file-url", "data-buttonText" => "UPLOAD IMAGE", "data-icon" => "false", "data-placeholder" => "Your image", class: "form-control filestyle" %>
+          </div>
+          <%= f.button :submit, 'Save front', class: "btn main__btn center-block main__btn-md main__btn_bgm", type: "submit" %>
+        <% end %>
+        </div>
+    </div>
+  </div>
+</div>
