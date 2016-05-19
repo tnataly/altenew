@@ -3,7 +3,7 @@
     <div class="block__edit_template">
       <% if @last_back.present? %>
         <div class="img__edit">
-          <%= image_tag "#{@last_back.image}", style: "height: 490px; width: 483px;"%>
+          <%= inline_svg "#{@last_back.image}", class: "front-svg"%>
         </div>
         <%= link_to "Edit", edit_admin_kit_template_back_path(@kit, @template, @last_back), remote: true, id: "btn__orange", class: "btn main__btn main__btn-md main__btn_bg0" %>
         <%= link_to "Delete", admin_kit_template_back_path(@kit, @template, @last_back), method: :delete, data: { confirm: 'Are you sure you want to delete this item?' }, class: "btn main__btn main__btn-md main__btn_bg0" %>

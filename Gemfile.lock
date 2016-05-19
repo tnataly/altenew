@@ -100,6 +100,10 @@ GEM
     highline (1.7.8)
     hike (1.2.3)
     i18n (0.7.0)
+    inline_svg (0.7.0)
+      activesupport (>= 4.0.4)
+      loofah (>= 2.0)
+      nokogiri (~> 1.6)
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -120,6 +124,8 @@ GEM
       sprockets (> 2, < 4)
       tilt
     libv8 (3.16.14.13)
+    loofah (2.0.3)
+      nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
     meta_request (0.4.0)
@@ -195,6 +201,7 @@ GEM
     ref (2.0.0)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
+    rmagick (2.15.4)
     rspec-activemodel-mocks (1.0.2)
       activemodel (>= 3.0)
       activesupport (>= 3.0)
@@ -280,6 +287,7 @@ DEPENDENCIES
   factory_girl_rails (~> 4.0)
   ffaker
   friendly_id (~> 5.0.0)
+  inline_svg
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
@@ -290,6 +298,7 @@ DEPENDENCIES
   pg
   pry-rails
   rails (= 4.1.6)
+  rmagick
   rspec-activemodel-mocks
   rspec-rails (= 3.2.3)
   sass-rails (~> 4.0.3)

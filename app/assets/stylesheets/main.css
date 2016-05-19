@@ -798,6 +798,13 @@ li.active > .tabs_rsvp{
   -o-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
 }
+.front-svg {
+  display: block;
+  margin: 0 auto;
+  fill: #3498db;
+  width: 483px;
+  height: 490px;
+}
 .pagin{
   position:relative;
   top: 0;

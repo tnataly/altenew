@@ -38,6 +38,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
+gem 'inline_svg'
+gem "rmagick"
 
 
 # Use ActiveModel has_secure_password
