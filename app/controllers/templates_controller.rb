@@ -1,5 +1,11 @@
 class TemplatesController < ApplicationController
-  def index
-    @templates = Template.order(:title).page(params[:page])
+
+  def show
+    @kit = Kit.friendly.find(params[:kit_id])
+    @template = Template.friendly.find(params[:id])
+    @last_front = @template.fronts.last
+    @last_back = @template.backs.last
+    @personalize = Personalize.new
   end
+
 end

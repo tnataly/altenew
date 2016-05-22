@@ -805,6 +805,13 @@ li.active > .tabs_rsvp{
   width: 483px;
   height: 490px;
 }
+.front-personalize-svg {
+  display: block;
+  margin: 0 auto;
+  fill: #3498db;
+  width: 387px;
+  height: 388px;
+}
 .pagin{
   position:relative;
   top: 0;

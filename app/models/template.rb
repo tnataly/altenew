@@ -3,6 +3,7 @@ class Template < ActiveRecord::Base
   has_many :samples
   has_many :fronts
   has_many :backs
+  has_many :personalizes
   mount_uploader :cover_image, ImageUploader
   validates :title, :size, :cover_image, presence: true
 

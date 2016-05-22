@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
   devise_for :admins
   devise_for :users, :controllers => { registrations: 'users/registrations', omniauth_callbacks: 'users/omniauth_callbacks' }
 
@@ -11,8 +12,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :personalizes
+
   root 'kits#index'
   get '/kits/:id', to: 'kits#show', as: :kit_show
+  get '/kits/:kit_id/templates/:id', to: 'templates#show', as: :template_show
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
