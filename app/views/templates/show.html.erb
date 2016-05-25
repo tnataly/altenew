@@ -1,4 +1,5 @@
 <main>
+
   <div class="container text-center">
     <div class="row">
       <hr class="hr_bot">
@@ -17,15 +18,33 @@
             <div class="tab-content">
               <div class="tab-pane fade in active" id="tab-1">
                 <div class="modal3__block">
+
                   <div class="modal3__block-in">
+
                     <% if @last_front.present? %>
-                      <%= inline_svg "#{@last_front.image}", class: "front-personalize-svg" %>
+                    <div id="inline1" contenteditable="true">
+                      <%= embedded_svg "#{@last_front.image}", class: "front-personalize-svg" %>
+                    </div>
                     <% else %>
                       <%= image_tag "default.png", class: "front-personalize-svg" %>
                     <% end %>
-                    <%= simple_form_for @personalize do |f|%>
-                      <%= f.input :text_personalize, :as => :ckeditor, :input_html => {:ckeditor => {:toolbar => 'mini', :contenteditable => "true"}, label: false } %>
-                    <% end %>
+
+                    <script type='test/javascript'>
+                     $(document).ready(function(){
+                        // Turn off automatic editor creation first.
+                        CKEDITOR.disableAutoInline = true;
+
+                        CKEDITOR.inline( 'inline1', {
+                          // To enable source code editing in a dialog window, inline editors require the "sourcedialog" plugin.
+                          extraPlugins: 'sharedspace,sourcedialog',
+                          removePlugins: 'floatingspace,maximize,resize',
+                          sharedSpaces: {
+                            top: 'top2',
+                            bottom: 'bottom'
+                          }
+                        });
+                      });
+                    </script>
                   </div>
                 </div>
               </div>
@@ -33,11 +52,31 @@
                 <div class="modal3__block">
                   <div class="modal3__block-in">
                     <% if @last_front.present? %>
-                      <%= inline_svg "#{@last_back.image}", class: "front-personalize-svg" %>
+                      <div id="inline2" contenteditable="true">
+                        <%= embedded_svg "#{@last_back.image}", class: "front-personalize-svg" %>
+                      </div>
                     <% else %>
                       <%= image_tag "default.png", class: "front-personalize-svg" %>
                     <% end %>
-                    <p>tut text 2 or img 2 on bg</p>
+                    <div id="inline1" contenteditable="true" style="margin-top:-380px; height:350px;">
+
+                    </div>
+                    <script type='test/javascript'>
+                     $(document).ready(function(){
+                        // Turn off automatic editor creation first.
+                        CKEDITOR.disableAutoInline = true;
+
+                        CKEDITOR.inline( 'inline2', {
+                          // To enable source code editing in a dialog window, inline editors require the "sourcedialog" plugin.
+                          extraPlugins: 'sharedspace,sourcedialog',
+                          removePlugins: 'floatingspace,maximize,resize',
+                          sharedSpaces: {
+                            top: 'top2',
+                            bottom: 'bottom'
+                          }
+                        });
+                      });
+                    </script>
                   </div>
                 </div>
               </div>
@@ -79,114 +118,14 @@
 
       <div class="col-xs-12 col-sm-6">
         <h3 id="strong" class="text-left">Format text</h3>
-        <div class="bgcf0 bg_pad">
-          <div class="line__format">
-            <div class="col-xs-5">
-              <select class="form-control">
-                <option>Font</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-            <div class="col-xs-3">
-              <select class="form-control">
-                <option>Size</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-            <div class="col-xs-2">
-              <select class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-            <div class="col-xs-1">
-              <button class="btn btn-default">
-                <i class="fa fa-bold" aria-hidden="true"></i>
-              </button>
-            </div>
-            <div class="col-xs-1">
-              <button class="btn btn-default">
-                <i class="fa fa-underline" aria-hidden="true"></i>
-              </button>
-            </div>
-          </div>
+        <div id="top2">
 
-          <div class="line__format">
-            <div class="col-xs-4 col-sm-4 col-md-3">
-              <div class="btn-group btn-group_1">
-                <a class="btn btn-default" href="#">
-                  <i class="fa fa-align-left" title="Align Left"></i>
-                </a>
-                <a class="btn btn-default" href="#">
-                  <i class="fa fa-align-center" title="Align Center"></i>
-                </a>
-                <a class="btn btn-default" href="#">
-                  <i class="fa fa-align-right" title="Align Right"></i>
-                </a>
-              </div>
-            </div>
-            <div class="col-xs-3 col-sm-3 col-md-2">
-              <div class="btn-group btn-group_2">
-                <a href="#" class="btn btn-default">
-                  <i class="fa fa-indent" aria-hidden="true"></i>
-                </a>
-                <a href="#" class="btn btn-default">
-                  <i class="fa fa-outdent" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
-            <div class="col-xs-3 col-sm-3 col-md-2">
-              <div class="btn-group btn-group_2">
-                <a href="#" class="btn btn-default">
-                  <i class="fa fa-paragraph" aria-hidden="true"></i>
-                </a>
-                <a href="#" class="btn btn-default">
-                  <i class="fa fa-paragraph" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
-            <div class="col-xs-3 col-sm-3 col-md-2">
-              <div class="btn-group btn-group_2">
-                <a href="#" class="btn btn-default">
-                  <i class="fa fa-reply" aria-hidden="true"></i>
-                </a>
-                <a href="#" class="btn btn-default">
-                  <i class="fa fa-share" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
-          </div>
+        </div>
 
-          <div class="line__format">
-            <div class="col-xs-6 col-sm-6 col-md-4">
-              <select class="form-control">
-                <option>Letter Spacing</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-            <div class="col-xs-6 col-sm-6 col-md-4">
-              <select class="form-control">
-                <option>Line Height</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-              </select>
-            </div>
-          </div>
           <br>
+        <div id="bottom">
+          <!-- This div will handle all bottom bars. -->
+        </div>
 
           <div class="line__format text-left">
             <button id="btn__orange" type="button" class="main__btn_wa main__btn_bg0 main__btn btn btn_last_15">Review & Download</button>
@@ -200,3 +139,4 @@
   </div>
 
 </main>
+

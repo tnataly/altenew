@@ -97,3 +97,8 @@ a.cke_button_dynamicbgcolor.cke_button_off {
     width: 100%\9;
     height: 100%\9;
 }
+
+/* costum */
+.simple_form.new_personalize{
+  height: 100%;
+}
