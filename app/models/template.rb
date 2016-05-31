@@ -1,6 +1,7 @@
 class Template < ActiveRecord::Base
   belongs_to :kit
   has_many :samples
+  has_many :back_samples
   has_many :fronts
   has_many :backs
   has_many :personalizes
