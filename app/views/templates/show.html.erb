@@ -18,9 +18,7 @@
             <div class="tab-content">
               <div class="tab-pane fade in active" id="tab-1">
                 <div class="modal3__block">
-
                   <div class="modal3__block-in">
-
                     <% if @last_front.present? %>
                     <div id="inline1" contenteditable="true">
                       <%= embedded_svg "#{@last_front.image}", class: "front-personalize-svg" %>
@@ -28,23 +26,6 @@
                     <% else %>
                       <%= image_tag "default.png", class: "front-personalize-svg" %>
                     <% end %>
-
-                    <script type='test/javascript'>
-                     $(document).ready(function(){
-                        // Turn off automatic editor creation first.
-                        CKEDITOR.disableAutoInline = true;
-
-                        CKEDITOR.inline( 'inline1', {
-                          // To enable source code editing in a dialog window, inline editors require the "sourcedialog" plugin.
-                          extraPlugins: 'sharedspace,sourcedialog',
-                          removePlugins: 'floatingspace,maximize,resize',
-                          sharedSpaces: {
-                            top: 'top2',
-                            bottom: 'bottom'
-                          }
-                        });
-                      });
-                    </script>
                   </div>
                 </div>
               </div>
@@ -52,30 +33,14 @@
                 <div class="modal3__block">
                   <div class="modal3__block-in">
                     <% if @last_front.present? %>
-                      <div id="inline2" contenteditable="true">
+                      <div id="inline2" contenteditable="true" creditor-toolbar="mini">
                         <%= embedded_svg "#{@last_back.image}", class: "front-personalize-svg" %>
                       </div>
                     <% else %>
                       <%= image_tag "default.png", class: "front-personalize-svg" %>
                     <% end %>
                     <div id="inline1" contenteditable="true" style="margin-top:-380px; height:350px;">
-
                     </div>
-                    <script type='test/javascript'>
-                     $(document).ready(function(){
-                        // Turn off automatic editor creation first.
-                        CKEDITOR.disableAutoInline = true;
-
-                        CKEDITOR.inline( 'inline2', {
-                          // To enable source code editing in a dialog window, inline editors require the "sourcedialog" plugin.
-                          extraPlugins: 'sharedspace,sourcedialog',
-                          removePlugins: 'floatingspace,maximize,resize',
-                          sharedSpaces: {
-                            top: 'top2',
-                            bottom: 'bottom'
-                          }
-                        });
-                      });
                     </script>
                   </div>
                 </div>
@@ -120,11 +85,6 @@
         <h3 id="strong" class="text-left">Format text</h3>
         <div id="top2">
 
-        </div>
-
-          <br>
-        <div id="bottom">
-          <!-- This div will handle all bottom bars. -->
         </div>
 
           <div class="line__format text-left">
