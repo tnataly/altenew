@@ -12,6 +12,8 @@ class TemplatesController < ApplicationController
     #end
     @text_styles = @test.search('text').map(&:text)
     @personalize = Personalize.new
+    @back_samples = @template.back_samples.order(updated_at: :desc).page(params[:page])
+    @samples = @template.samples.order(updated_at: :desc).page(params[:page])
   end
 
 end

@@ -133,6 +133,58 @@
           </div>
         </div>
 
+        <div class="col-xs-12 col-sm-6">
+          <h3 class="text-left">Front Samples</h3>
+          <div class="samples">
+            <% if @samples.present? %>
+              <% @samples.each do |sample| %>
+                <div class="sample-item">
+                  <%= link_to asset_path("#{sample.image.url}"), data:{toggle: "lightbox", gallery: "multimages"} do%>
+                    <div class="front_mul_edit">
+                      <%= image_tag "#{sample.image}", style: "height: 176px; width: 120px;" %>
+                      <span class="fa-stack fa_search_op fa-2x">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-search fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
+            <% else %>
+              No Front Samples
+            <% end %>
+          </div>
+          <div class="pagin-samples">
+            <%= paginate @samples, :theme => 'twitter-bootstrap-3', :pagination_class => "pagination" %>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-6">
+          <h3 class="text-left">Back Samples</h3>
+          <div class="samples">
+            <% if @back_samples.present? %>
+              <% @back_samples.each do |sample| %>
+                <div class="sample-item">
+                  <%= link_to asset_path("#{sample.image.url}"), data:{toggle: "lightbox", gallery: "multimages"} do%>
+                    <div class="front_mul_edit">
+                      <%= image_tag "#{sample.image}", style: "height: 176px; width: 120px;" %>
+                      <span class="fa-stack fa_search_op fa-2x">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-search fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </div>
+                  <% end %>
+                </div>
+              <% end %>
+            <% else %>
+              No Back Samples
+            <% end %>
+          </div>
+          <div class="pagin-samples">
+            <%= paginate @back_samples, :theme => 'twitter-bootstrap-3', :pagination_class => "pagination" %>
+          </div>
+        </div>
+
       </div>
 
     </div>

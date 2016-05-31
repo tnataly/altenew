@@ -378,6 +378,7 @@ li.devide__nav {
 
 .footer{
   background-color: #dbdbdb;
+  margin-top: 10px;
 }
 .footer__icons{
   padding: 20px 60px 20px 5px;
@@ -631,11 +632,9 @@ span > i.icon_rotate:hover{
   padding:10px;
   background-color: #f0f0f0;
   border: 1px solid #000;
+  height: 180px;
 }
 .front_mul_edit{
-  height: 120px;
-  background-color:#ffffff;
-  border: 1px solid #000;
 }
 .front_mul_edit_b{
   height: 142px;
@@ -792,7 +791,19 @@ li.active > .tabs_rsvp{
   color: #333;
   opacity:0;
 }
+.fa_search_op{
+  top: -110px;
+  left: 5px;
+  color: #333;
+  opacity:0;
+}
 .template_inv_ed_in:hover > .fa_cen_op, .front_mul_edit:hover > .fa_times_op {
+  opacity: 0.68;
+  -webkit-transition: all 0.7s ease-in-out;
+  -o-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+.front_mul_edit:hover > .fa_search_op {
   opacity: 0.68;
   -webkit-transition: all 0.7s ease-in-out;
   -o-transition: all 0.7s ease-in-out;
@@ -817,6 +828,10 @@ li.active > .tabs_rsvp{
   top: 0;
   left: 340px;
   width: 400px;
+}
+.pagin-sample{
+  position:relative;
+  top: 0;
 }
 .margin_t_lg{
   margin-top: 250px;
@@ -864,4 +879,15 @@ li.active > .tabs_rsvp{
   border-color: #daa520;
   background-color: #daa520;
   background-image: none;
+}
+.samples{
+  height: 190px;
+  background-color: #c5c5c5;
+  padding: 5px;
+}
+.sample-item{
+  float: left;
+  width: 120px;
+  height: 176px;
+  margin-left: 10px;
 }
