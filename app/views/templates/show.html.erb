@@ -33,15 +33,12 @@
                 <div class="modal3__block">
                   <div class="modal3__block-in">
                     <% if @last_front.present? %>
-                      <div id="inline2" contenteditable="true" creditor-toolbar="mini">
+                      <div id="inline1" contenteditable="true">
                         <%= embedded_svg "#{@last_back.image}", class: "front-personalize-svg" %>
                       </div>
                     <% else %>
                       <%= image_tag "default.png", class: "front-personalize-svg" %>
                     <% end %>
-                    <div id="inline1" contenteditable="true" style="margin-top:-380px; height:350px;">
-                    </div>
-                    </script>
                   </div>
                 </div>
               </div>
