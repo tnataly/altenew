@@ -75,6 +75,28 @@
       <div class="pagin">
         <%= paginate @samples, :theme => 'twitter-bootstrap-3', :pagination_class => "pagination" %>
       </div>
+  </div>
+
+  <div class="modal fade" id="back-sample-form"></div>
+  <div class="container container__m-bb">
+    <div class="row row_left">
+      <h3>Back Samples</h3>
+      <div id="back-samples">
+        <%= render "back_sample" %>
+      </div>
+      <div class="col-xs-5 col-sm-4 col-md-3 col-lg-3">
+        <div class="col-xs-12 front_mul_par_pd">
+          <%= link_to new_admin_kit_template_back_sample_path(@kit, @template), remote: true do %>
+            <div class="front_mul_edit_b">
+              <i class="fa fa-plus adm_kit_plus admin_ui_plus_pos" aria-hidden="true"></i>
+            </div>
+          <% end %>
+          <%= link_to "Add new sample", new_admin_kit_template_back_sample_path(@kit, @template), remote: true, id: "btn__orange", class: "btn main__btn"%>
+        </div>
+      </div>
+      <div class="pagin">
+        <%= paginate @back_samples, :theme => 'twitter-bootstrap-3', :pagination_class => "pagination" %>
+      </div>
       <div class="text-center margin_t_lg">
         <%= link_to "Back", admin_kit_templates_path(@kit), class: "main__btn btn main__btn_wa", id: "btn__orange", type: "button" %>
         <%= f.button :submit, 'Save template', class: "main__btn btn main__btn_wa", id: "btn__orange", form: "edit_template_#{@template.id}" %>

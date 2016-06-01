@@ -42,6 +42,7 @@ gem 'inline_svg'
 gem "rmagick"
 gem 'ckeditor'
 
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,8 +1,8 @@
 <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 front_sampl_edd">
-  <% if @samples.present? %>
-    <% @samples.each do |sample| %>
+  <% if @back_samples.present? %>
+    <% @back_samples.each do |sample| %>
       <div class="col-xs-2">
-        <%= link_to admin_kit_template_sample_path(@kit, @template, sample), method: :delete, data: { confirm: 'Are you sure you want to delete this item?' } do %>
+        <%= link_to admin_kit_template_back_sample_path(@kit, @template, sample), method: :delete, data: { confirm: 'Are you sure you want to delete this item?' } do %>
           <div class="front_mul_edit">
             <%= image_tag "#{sample.image}", style: "height: 160px; width: 107px;" %>
             <span class="fa-stack fa_times_op fa-2x">
@@ -14,6 +14,6 @@
       </div>
     <% end %>
   <% else %>
-    Add new Front Samples
+    Add new Back Samples
   <% end %>
 </div>

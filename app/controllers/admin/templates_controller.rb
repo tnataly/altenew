@@ -3,6 +3,7 @@ class Admin::TemplatesController < ApplicationController
   before_action :set_kit, only: [:index, :edit, :new, :create, :update, :destroy]
   before_action :set_template, only: [:edit, :update, :destroy]
   before_action :all_samples, only: [:edit]
+  before_action :all_back_samples, only: [:edit]
   before_action :set_front, only: [:edit]
   before_action :set_back, only: [:edit]
   respond_to :html, :js
@@ -17,6 +18,7 @@ class Admin::TemplatesController < ApplicationController
 
   def edit
     @sample = Sample.new
+    @back_sample = Sample.new
     @front = Front.new
     @back = Back.new
   end
@@ -76,6 +78,10 @@ class Admin::TemplatesController < ApplicationController
 
     def all_samples
       @samples = @template.samples.order(updated_at: :desc).page(params[:page])
+    end
+
+    def all_back_samples
+      @back_samples = @template.back_samples.order(updated_at: :desc).page(params[:page])
     end
 
     def set_front
